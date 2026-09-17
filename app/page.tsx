@@ -1,155 +1,237 @@
-const whatsapp = "https://wa.me/5518999999999";
+const WHATSAPP = "https://wa.me/5518999999999";
 
 const areas = [
   {
-    numero: "01",
-    titulo: "Direito Trabalhista",
-    texto: "Orientação e defesa em questões relacionadas às relações de trabalho, com atendimento próximo e estratégico.",
+    number: "01",
+    title: "Direito Trabalhista",
+    description:
+      "Orientação e atuação em questões relacionadas às relações de trabalho, com análise cuidadosa de cada situação.",
   },
   {
-    numero: "02",
-    titulo: "Direito Previdenciário",
-    texto: "Planejamento e orientação sobre benefícios, aposentadorias e direitos previdenciários.",
+    number: "02",
+    title: "Direito Previdenciário",
+    description:
+      "Acompanhamento em aposentadorias, benefícios e demais questões envolvendo o direito previdenciário.",
   },
   {
-    numero: "03",
-    titulo: "Direito Civil",
-    texto: "Assessoria em questões civis, contratos, família, sucessões e outras demandas do dia a dia.",
+    number: "03",
+    title: "Direito Civil",
+    description:
+      "Assessoria jurídica em contratos, obrigações, família, sucessões e conflitos de natureza civil.",
   },
 ];
 
-const etapas = [
-  ["01", "Conversa inicial", "Entendemos sua situação e suas necessidades com atenção."],
-  ["02", "Análise do caso", "Avaliamos documentos, contexto e possibilidades de atuação."],
-  ["03", "Estratégia jurídica", "Definimos o melhor caminho com orientação clara e objetiva."],
-  ["04", "Acompanhamento", "Você permanece informado durante todas as etapas do caso."],
+const steps = [
+  {
+    number: "01",
+    title: "Primeiro contato",
+    text: "O atendimento começa com uma conversa para entendermos a situação e as principais necessidades.",
+  },
+  {
+    number: "02",
+    title: "Análise",
+    text: "Documentos, informações e possibilidades são avaliados antes da definição dos próximos passos.",
+  },
+  {
+    number: "03",
+    title: "Orientação",
+    text: "Apresentamos os caminhos jurídicos possíveis de maneira clara e objetiva.",
+  },
+  {
+    number: "04",
+    title: "Acompanhamento",
+    text: "O cliente acompanha o desenvolvimento do trabalho e permanece informado durante o processo.",
+  },
 ];
 
 export default function Home() {
   return (
     <main>
+      {/* HEADER */}
       <header className="header">
-        <div className="container nav">
-          <div className="logo">
-            <span>VSA</span>
-            <div>
-              <strong>ADVOCACIA</strong>
-              <small>Consultoria Jurídica</small>
-            </div>
-          </div>
+        <div className="container headerInner">
+          <a href="#inicio" className="brand">
+            <div className="brandLetters">VSA</div>
 
-          <nav>
+            <div className="brandText">
+              <strong>ADVOCACIA</strong>
+              <span>Consultoria Jurídica</span>
+            </div>
+          </a>
+
+          <nav className="nav">
             <a href="#inicio">Início</a>
-            <a href="#escritorio">Escritório</a>
+            <a href="#escritorio">O escritório</a>
             <a href="#atuacao">Atuação</a>
-            <a href="#processo">Atendimento</a>
+            <a href="#atendimento">Atendimento</a>
             <a href="#contato">Contato</a>
           </nav>
 
-          <a className="btnGold small" href={whatsapp} target="_blank">
+          <a
+            className="headerContact"
+            href={WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Fale conosco
+            <span>↗</span>
           </a>
         </div>
       </header>
 
+      {/* HERO */}
       <section className="hero" id="inicio">
         <div className="container heroGrid">
-          <div className="heroText">
-            <span className="eyebrow">ADVOCACIA E CONSULTORIA JURÍDICA</span>
+          <div className="heroContent">
+            <div className="heroLabel">
+              <span />
+              Advocacia & Consultoria Jurídica
+            </div>
 
             <h1>
-              Clareza jurídica
+              Segurança jurídica
               <br />
-              para decisões
+              começa com uma
               <br />
-              mais seguras.
+              <em>boa orientação.</em>
             </h1>
 
-            <p>
-              Atendimento jurídico próximo, estratégico e personalizado para
-              proteger seus direitos e oferecer segurança em cada decisão.
+            <p className="heroDescription">
+              Atendimento jurídico responsável, próximo e conduzido com
+              clareza em todas as etapas.
             </p>
 
-            <div className="heroButtons">
-              <a className="btnGold" href={whatsapp} target="_blank">
-                Agendar atendimento →
+            <div className="heroActions">
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primaryButton"
+              >
+                Agendar uma conversa
+                <span>→</span>
               </a>
 
-              <a className="btnOutline" href="#escritorio">
-                Conhecer o escritório
+              <a href="#atuacao" className="textButton">
+                Conheça nossa atuação
               </a>
             </div>
 
-            <small className="attendance">
-              ◉ Atendimento online e presencial
-            </small>
+            <div className="heroInfo">
+              <div>
+                <span className="infoDot" />
+                Atendimento presencial
+              </div>
+
+              <div>
+                <span className="infoDot" />
+                Atendimento online
+              </div>
+            </div>
           </div>
 
-          <div className="heroImage">
-            <div className="imagePlaceholder">
-              <span>FOTO DO ADVOGADO</span>
-              <small>Colocaremos a imagem aqui</small>
+          <div className="heroVisual">
+            <div className="heroPhoto">
+              <div className="photoMessage">
+                <span>Imagem institucional</span>
+                <small>Foto do advogado ou escritório</small>
+              </div>
             </div>
+
+            <div className="heroStamp">
+              <span>ATENDIMENTO</span>
+              <strong>com clareza</strong>
+              <small>e responsabilidade</small>
+            </div>
+          </div>
+        </div>
+
+        <div className="container heroBottom">
+          <span>01</span>
+          <p>
+            Uma atuação jurídica construída sobre análise, diálogo e
+            responsabilidade.
+          </p>
+          <div />
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="intro">
+        <div className="container introGrid">
+          <div className="sectionIndex">
+            <span>02</span>
+            <div />
+          </div>
+
+          <div className="introTitle">
+            <span className="sectionLabel">NOSSA FORMA DE TRABALHAR</span>
+
+            <h2>
+              Direito exige técnica.
+              <br />
+              Atendimento exige
+              <br />
+              <em>proximidade.</em>
+            </h2>
+          </div>
+
+          <div className="introText">
+            <p>
+              Cada situação possui suas particularidades. Por isso, nosso
+              trabalho começa pela compreensão do caso antes de qualquer
+              decisão.
+            </p>
+
+            <p>
+              A orientação jurídica é apresentada de forma objetiva, permitindo
+              que o cliente compreenda seus direitos, possibilidades e os
+              próximos passos.
+            </p>
+
+            <a href="#escritorio">
+              Sobre o escritório
+              <span>→</span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section className="benefits">
-        <div className="container benefitsGrid">
-          <div>
-            <b>◎</b>
-            <span>
-              <strong>Escuta atenta</strong>
-              <small>Compreendemos sua realidade.</small>
-            </span>
-          </div>
-
-          <div>
-            <b>◉</b>
-            <span>
-              <strong>Orientação clara</strong>
-              <small>Linguagem objetiva e acessível.</small>
-            </span>
-          </div>
-
-          <div>
-            <b>◎</b>
-            <span>
-              <strong>Estratégia personalizada</strong>
-              <small>Soluções adequadas ao seu caso.</small>
-            </span>
-          </div>
-
-          <div>
-            <b>◇</b>
-            <span>
-              <strong>Acompanhamento próximo</strong>
-              <small>Você sempre informado.</small>
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section className="areas" id="atuacao">
+      {/* ÁREAS */}
+      <section className="practice" id="atuacao">
         <div className="container">
-          <span className="eyebrow gold">ÁREAS DE ATUAÇÃO</span>
+          <div className="practiceHeader">
+            <div>
+              <span className="sectionLabel light">ÁREAS DE ATUAÇÃO</span>
+              <h2>
+                Experiência jurídica para
+                <br />
+                diferentes necessidades.
+              </h2>
+            </div>
 
-          <div className="sectionTitleRow">
-            <h2>Soluções jurídicas para diferentes momentos.</h2>
             <p>
-              Conhecimento técnico e visão prática para proteger o que mais
-              importa.
+              Atuação orientada por conhecimento técnico, análise individual e
+              comunicação transparente.
             </p>
           </div>
 
-          <div className="areaGrid">
+          <div className="practiceList">
             {areas.map((area) => (
-              <article className="areaCard" key={area.titulo}>
-                <span className="areaNumber">{area.numero}</span>
-                <h3>{area.titulo}</h3>
-                <p>{area.texto}</p>
-                <a href={whatsapp} target="_blank">
-                  Saiba mais →
+              <article className="practiceItem" key={area.number}>
+                <span className="practiceNumber">{area.number}</span>
+
+                <h3>{area.title}</h3>
+
+                <p>{area.description}</p>
+
+                <a
+                  href={WHATSAPP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Saiba mais sobre ${area.title}`}
+                >
+                  ↗
                 </a>
               </article>
             ))}
@@ -157,173 +239,228 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about" id="escritorio">
-        <div className="container aboutGrid">
-          <div className="aboutText">
-            <span className="eyebrow">O ESCRITÓRIO</span>
+      {/* ESCRITÓRIO */}
+      <section className="office" id="escritorio">
+        <div className="container officeGrid">
+          <div className="officeImage">
+            <div className="officePlaceholder">
+              <span>FOTO DO ESCRITÓRIO</span>
+            </div>
+
+            <div className="imageCaption">
+              <span>01</span>
+              <p>Atendimento próximo e individualizado.</p>
+            </div>
+          </div>
+
+          <div className="officeContent">
+            <span className="sectionLabel">O ESCRITÓRIO</span>
+
             <h2>
-              Direito conduzido
+              Relações de confiança
               <br />
-              com técnica e proximidade.
+              também fazem parte
+              <br />
+              do nosso trabalho.
             </h2>
 
-            <p>
-              Um escritório comprometido com atendimento personalizado,
-              responsabilidade e transparência. Cada situação é analisada de
-              forma individual, buscando soluções jurídicas claras e seguras.
-            </p>
+            <div className="officeCopy">
+              <p>
+                A advocacia vai além da interpretação da lei. Ela envolve
+                compreender pessoas, contextos e decisões que podem ter impacto
+                direto na vida de cada cliente.
+              </p>
 
-            <p>
-              Nosso propósito é tornar o direito mais acessível, oferecendo
-              orientação próxima do início ao fim.
-            </p>
+              <p>
+                Nosso atendimento é conduzido com responsabilidade,
+                transparência e atenção aos detalhes, desde a primeira conversa
+                até a conclusão do trabalho.
+              </p>
+            </div>
 
-            <a className="btnGold" href={whatsapp} target="_blank">
-              Conheça nosso atendimento →
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="darkButton"
+            >
+              Conversar com o escritório
+              <span>→</span>
             </a>
           </div>
-
-          <div className="aboutImage">
-            <div className="imagePlaceholder dark">
-              <span>FOTO DO ESCRITÓRIO</span>
-              <small>Imagem institucional</small>
-            </div>
-          </div>
-
-          <aside className="quote">
-            <div></div>
-            <h3>
-              Informação
-              <br />
-              transforma
-              <br />
-              incerteza
-              <br />
-              em direção.
-            </h3>
-            <span>Mais que processos, pessoas.</span>
-          </aside>
         </div>
       </section>
 
-      <section className="help">
-        <div className="container">
-          <span className="eyebrow">COMO PODEMOS AJUDAR</span>
-          <h2>Suporte jurídico em cada etapa da sua necessidade.</h2>
+      {/* FRASE */}
+      <section className="statement">
+        <div className="container statementInner">
+          <span>“</span>
 
-          <div className="helpGrid">
-            <div>
-              <span>◌</span>
-              <h3>Orientação jurídica</h3>
-              <p>Esclarecemos dúvidas e apresentamos os caminhos possíveis.</p>
-            </div>
+          <h2>
+            Informação transforma
+            <br />
+            incerteza em direção.
+          </h2>
 
-            <div>
-              <span>▤</span>
-              <h3>Análise documental</h3>
-              <p>Avaliamos documentos com atenção, técnica e segurança.</p>
-            </div>
-
-            <div>
-              <span>♙</span>
-              <h3>Atuação em processos</h3>
-              <p>Representação e defesa dos seus direitos.</p>
-            </div>
-
-            <div>
-              <span>◇</span>
-              <h3>Consultoria preventiva</h3>
-              <p>Orientação para evitar conflitos e tomar decisões seguras.</p>
-            </div>
-          </div>
+          <p>
+            Nosso compromisso é tornar cada etapa mais clara para quem confia
+            seu caso ao escritório.
+          </p>
         </div>
       </section>
 
-      <section className="process" id="processo">
+      {/* PROCESSO */}
+      <section className="process" id="atendimento">
         <div className="container">
-          <span className="eyebrow gold">NOSSO PROCESSO</span>
-          <h2>Um atendimento claro, do início ao acompanhamento.</h2>
+          <div className="processTop">
+            <div>
+              <span className="sectionLabel">COMO FUNCIONA</span>
+              <h2>
+                Do primeiro contato
+                <br />
+                ao acompanhamento.
+              </h2>
+            </div>
 
-          <div className="processGrid">
-            {etapas.map(([numero, titulo, texto]) => (
-              <div className="processCard" key={numero}>
-                <div className="line"></div>
-                <strong>{numero}</strong>
-                <h3>{titulo}</h3>
-                <p>{texto}</p>
-              </div>
+            <p>
+              Um processo simples e transparente para que você saiba exatamente
+              como o atendimento será conduzido.
+            </p>
+          </div>
+
+          <div className="steps">
+            {steps.map((step) => (
+              <article className="step" key={step.number}>
+                <div className="stepTop">
+                  <span>{step.number}</span>
+                  <div />
+                </div>
+
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="cta">
-        <div className="container ctaContent">
-          <h2>
-            Toda situação começa
-            <br />
-            com uma boa orientação.
-          </h2>
+      {/* CTA */}
+      <section className="contactBanner">
+        <div className="container contactBannerInner">
+          <div>
+            <span className="sectionLabel light">FALE CONOSCO</span>
 
-          <p>
-            Converse conosco e receba uma orientação inicial sobre sua
-            necessidade.
-          </p>
+            <h2>
+              Precisa de orientação
+              <br />
+              sobre uma questão jurídica?
+            </h2>
+          </div>
 
-          <a href={whatsapp} target="_blank" className="btnGold">
-            Conversar pelo WhatsApp →
-          </a>
+          <div className="bannerRight">
+            <p>
+              Entre em contato para conversar sobre sua situação e entender
+              quais podem ser os próximos passos.
+            </p>
+
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="goldButton"
+            >
+              Conversar pelo WhatsApp
+              <span>↗</span>
+            </a>
+          </div>
         </div>
       </section>
 
+      {/* CONTATO */}
       <section className="contact" id="contato">
-        <div className="container">
-          <span className="eyebrow">CONTATO</span>
-          <h2>Estamos à sua disposição.</h2>
+        <div className="container contactGrid">
+          <div className="contactHeading">
+            <span className="sectionLabel">CONTATO</span>
 
-          <div className="contactGrid">
-            <div>
-              <strong>Telefone / WhatsApp</strong>
-              <p>(18) 99999-9999</p>
+            <h2>
+              Estamos à
+              <br />
+              sua disposição.
+            </h2>
+          </div>
+
+          <div className="contactDetails">
+            <div className="contactRow">
+              <span>Telefone</span>
+              <div>
+                <strong>(18) 99999-9999</strong>
+                <small>WhatsApp disponível</small>
+              </div>
             </div>
 
-            <div>
-              <strong>Horário</strong>
-              <p>Segunda a sexta, das 08:00 às 18:00</p>
+            <div className="contactRow">
+              <span>Atendimento</span>
+              <div>
+                <strong>Segunda a sexta</strong>
+                <small>08:00 às 18:00</small>
+              </div>
             </div>
 
-            <div>
-              <strong>Endereço</strong>
-              <p>Centro • Presidente Venceslau - SP</p>
-            </div>
-
-            <div>
-              <strong>Atendimento</strong>
-              <p>Presencial e online</p>
+            <div className="contactRow">
+              <span>Localização</span>
+              <div>
+                <strong>Presidente Venceslau — SP</strong>
+                <small>Atendimento presencial e online</small>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer>
-        <div className="container footerContent">
-          <div className="logo footerLogo">
-            <span>VSA</span>
+      {/* FOOTER */}
+      <footer className="footer">
+        <div className="container footerTop">
+          <div className="footerBrand">
+            <div className="brandLetters">VSA</div>
+
             <div>
               <strong>ADVOCACIA</strong>
-              <small>Consultoria Jurídica</small>
+              <span>Consultoria Jurídica</span>
             </div>
           </div>
 
+          <div className="footerNavigation">
+            <span>Navegação</span>
+
+            <a href="#inicio">Início</a>
+            <a href="#escritorio">O escritório</a>
+            <a href="#atuacao">Áreas de atuação</a>
+            <a href="#atendimento">Atendimento</a>
+          </div>
+
+          <div className="footerContact">
+            <span>Contato</span>
+
+            <strong>(18) 99999-9999</strong>
+            <p>Presidente Venceslau — SP</p>
+
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp ↗
+            </a>
+          </div>
+        </div>
+
+        <div className="container footerBottom">
           <p>
-            Direito com propósito.
-            <br />
-            Pessoas em primeiro lugar.
+            Este site possui caráter informativo e não substitui consulta
+            jurídica.
           </p>
 
-          <small>
-            © 2026 Advocacia. Todos os direitos reservados.
-          </small>
+          <p>© 2026 VSA Advocacia.</p>
         </div>
       </footer>
     </main>
